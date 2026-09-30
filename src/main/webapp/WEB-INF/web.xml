@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>gallleryapp</display-name>
+
+	<!-- 필터는 서블릿이 요청을 처리하기 전 -->
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.hexagon.galleryapp.web.filter.CharacterEncodingFilter</filter-class>
+		<!-- filter가 생성될때 한번 호출되는 초기화 메서드인 .init()이 호출될때 아래의 파라미터를 필터가 사용할 수 있다-->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
