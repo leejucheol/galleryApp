@@ -40,18 +40,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td colspan="7">
-						<button class="btn btn-primary" onClick="location.href='/gallery/write.jsp';">글등록</button>
-					</td>
-				</tr>
 				
 				<%for(Gallery gallery : list){%>
 				<tr>
 					<td>John</td>
 					<!-- 웹 브라우저는 보안상 로컬 os 자원을 절대로 접근할 수 없다 -->
 					<td><img src="\image\<%=gallery.getFilename() %>" width="45px"></td>
-					<td><%=gallery.getTitle() %></td>
+					<!-- Get 방식은 body가 없기 때문에 서버측 자원 요청시 가져갈 파라미터가 헤더에 실리기 때문에 노출됨 -->
+					<td><a href="/gallery/content.jsp?gid=<%=gallery.getGalleryId()%>"><%=gallery.getTitle() %></a></td>
 					<td><%=gallery.getWriter() %></td>
 					<td><%=gallery.getOriginalName() %></td>
 					<td><%=gallery.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) %></td>
@@ -59,6 +55,11 @@
 				</tr>
 				<%} %>
 			</tbody>
+				<tr>
+					<td colspan="7">
+						<button class="btn btn-primary" onClick="location.href='/gallery/write.jsp';">글등록</button>
+					</td>
+				</tr>
 		</table>
 	</div>
 
