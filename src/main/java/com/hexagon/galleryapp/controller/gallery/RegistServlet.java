@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import com.hexagon.galleryapp.dao.GalleryDAO;
+import com.hexagon.galleryapp.dao.MybatisGalleryDAO;
 import com.hexagon.galleryapp.dto.Gallery;
 import com.hexagon.galleryapp.util.FileManager;
 
@@ -38,7 +39,7 @@ public class RegistServlet extends HttpServlet{
 	// 앞으로 이미지가 저장될 디렉토리
 	private final String UPLOAD_DIR="C:" + File.separator+ "Users" +File.separator + "jclle"+ File.separator +"upload" + File.separator;
 	
-	GalleryDAO galleryDAO = new GalleryDAO();
+	MybatisGalleryDAO galleryDAO = new MybatisGalleryDAO();
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

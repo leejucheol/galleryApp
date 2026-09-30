@@ -1,7 +1,8 @@
+<%@page import="com.hexagon.galleryapp.dao.MybatisGalleryDAO"%>
 <%@page import="com.hexagon.galleryapp.dto.Gallery"%>
 <%@page import="com.hexagon.galleryapp.dao.GalleryDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%!GalleryDAO galleryDAO = new GalleryDAO();%>
+<%!MybatisGalleryDAO galleryDAO = new MybatisGalleryDAO();%>
 <%
 long galleryId = Long.parseLong(request.getParameter("gid"));
 // String sql = "select ** from gallery where gallery_id=" + galleryId;

@@ -1,9 +1,10 @@
+<%@page import="com.hexagon.galleryapp.dao.MybatisGalleryDAO"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="com.hexagon.galleryapp.dto.Gallery"%>
 <%@page import="java.util.List"%>
 <%@page import="com.hexagon.galleryapp.dao.GalleryDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%!	GalleryDAO galleryDAO = new GalleryDAO();%>
+<%!	MybatisGalleryDAO galleryDAO = new MybatisGalleryDAO();%>
 <%
 	//Generic  을  선언하지 않아도 되지만, 꺼내서 쓸때 형변환해야 하는 불편함이 잇으므로, collection 을 사용할 경우 
 	//제너릭을 생활화 하자!!!
